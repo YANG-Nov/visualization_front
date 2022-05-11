@@ -1,15 +1,30 @@
 <template>
   <div class="app-container">
-    <el-descriptions title="项目信息" direction="vertical" :column="2" border>
-      <el-descriptions-item label="隧道名称">{{name}}</el-descriptions-item>
-      <el-descriptions-item label="业主单位">{{ownerUnit}}</el-descriptions-item>
-      <el-descriptions-item label="设计单位">{{designUnit}}</el-descriptions-item>
-      <el-descriptions-item label="施工单位">{{constructionUnit}}</el-descriptions-item>
-      <el-descriptions-item label="监理单位">{{supervisionUnit}}</el-descriptions-item>
-      <el-descriptions-item label="隧道简介">{{introduction}}</el-descriptions-item>
+    <el-descriptions title="项目信息" :column="1" border>
+      <el-descriptions-item label="隧道名称" label-class-name="my-label" content-class-name="my-content">{{name}}</el-descriptions-item>
+      <el-descriptions-item label="业主单位" label-class-name="my-label">{{ownerUnit}}</el-descriptions-item>
+      <el-descriptions-item label="设计单位" label-class-name="my-label">{{designUnit}}</el-descriptions-item>
+      <el-descriptions-item label="施工单位" label-class-name="my-label">{{constructionUnit}}</el-descriptions-item>
+      <el-descriptions-item label="监理单位" label-class-name="my-label">{{supervisionUnit}}</el-descriptions-item>
+      <el-descriptions-item label="隧道简介" label-class-name="my-label">{{introduction}}</el-descriptions-item>
     </el-descriptions>
   </div>
+
 </template>
+<style>
+.my-label {
+  background: #E1F3D8;
+  word-break: keep-all;
+}
+
+.my-content {
+  background: #ffffff;
+  /*max-width: 300px;*/
+  /*word-break: break-all;*/
+}
+</style>
+
+
 <script>
 import {getTunnelBasicInformation} from "@/api/tunnel";
 
