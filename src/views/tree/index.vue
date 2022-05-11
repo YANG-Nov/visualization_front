@@ -1,16 +1,16 @@
 <template>
   <div class="app-container">
-    <el-input v-model="filterText" placeholder="Filter keyword" style="margin-bottom:30px;" />
+<!--    <el-input v-model="filterText" placeholder="Filter keyword" style="margin-bottom:30px;" />-->
 
-    <el-tree
-      ref="tree2"
-      :data="data2"
-      :props="defaultProps"
-      :filter-node-method="filterNode"
-      class="filter-tree"
-      default-expand-all
-    />
-
+<!--    <el-tree-->
+<!--      ref="tree2"-->
+<!--      :data="data2"-->
+<!--      :props="defaultProps"-->
+<!--      :filter-node-method="filterNode"-->
+<!--      class="filter-tree"-->
+<!--      default-expand-all-->
+<!--    />-->
+    <div class="dashboard-text">点击构件可查看 构件名称、材料型号、安装时间、其他相关资料（图纸等形式）</div>
   </div>
 </template>
 

@@ -1,6 +1,8 @@
 <template>
   <div class="dashboard-container">
-    <div class="dashboard-text">name: {{ name }}</div>
+<!--    <div class="dashboard-text">name: {{ name }}</div>-->
+    <div class="dashboard-text">应急管理信息（预警信息、紧急事件等）</div>
+    <div class="dashboard-text">病害数量统计、传感器问题统计、状态数据统计</div>
   </div>
 </template>
 

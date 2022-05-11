@@ -43,109 +43,199 @@ export const constantRoutes = [
     hidden: true
   },
 
+  // {
+  //   path: '/',
+  //   component: Layout,
+  //   redirect: '/dashboard',
+  //   children: [{
+  //     path: 'dashboard',
+  //     name: 'Dashboard',
+  //     component: () => import('@/views/dashboard/index'),
+  //     meta: { title: '首页', icon: 'dashboard' }
+  //   }]
+  // },
+
+  {
+    path: '/home',
+    component: Layout,
+    redirect: '/home',
+    children: [{
+      path: 'home',
+      name: '首页',
+      component: () => import('@/views/vis/home'),
+      meta: { title: '首页', icon: 'dashboard' }
+    }]
+  },
+
   {
     path: '/tunnel',
     component: Layout,
+    redirect: '/tunnel/vis',
+    name: '基础数据',
+    meta: { title: '基础数据', icon: 'el-icon-s-help' },
     children: [
       {
         path: 'tunnel',
-        name: '基本信息',
+        name: '项目信息',
         component: () => import('@/views/vis/tunnel'),
-        meta: { title: '基本信息', icon: 'form' }
-      }
-    ]
-  },
-  {
-    path: '/',
-    component: Layout,
-    redirect: '/dashboard',
-    children: [{
-      path: 'dashboard',
-      name: 'Dashboard',
-      component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
-    }]
-  },
-  {
-    path: '/example',
-    component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
-    children: [
-      {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        meta: { title: '项目信息', icon: 'table' }
       },
       {
         path: 'tree',
-        name: 'Tree',
+        name: '构件信息',
         component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        meta: { title: '构件信息', icon: 'tree' }
       }
     ]
   },
 
   {
-    path: '/nested',
+    path: '/monitoring',
     component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
-    meta: {
-      title: 'Nested',
-      icon: 'nested'
-    },
     children: [
       {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: 'Menu1' },
-        children: [
-          {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
-          },
-          {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
-          }
-        ]
-      },
-      {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        name: 'Menu2',
-        meta: { title: 'menu2' }
+        path: 'monitoring',
+        name: '监测数据',
+        component: () => import('@/views/vis/monitoring'),
+        meta: { title: '监测数据', icon: 'form' }
       }
     ]
   },
+
+  {
+    path: '/inspection',
+    component: Layout,
+    children: [
+      {
+        path: 'inspection',
+        name: '检测数据',
+        component: () => import('@/views/vis/inspection'),
+        meta: { title: '检测数据', icon: 'form' }
+      }
+    ]
+  },
+
+  {
+    path: '/suggestion',
+    component: Layout,
+    children: [
+      {
+        path: 'suggestion',
+        name: '决策建议数据',
+        component: () => import('@/views/vis/suggestion'),
+        meta: { title: '决策建议数据', icon: 'form' }
+      }
+    ]
+  },
+
+  {
+    path: '/analyse',
+    component: Layout,
+    redirect: '/analyse/status',
+    name: 'Analyse',
+    meta: { title: '分析数据', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'status',
+        name: 'Status',
+        component: () => import('@/views/vis/status'),
+        meta: { title: '状态评定数据', icon: 'table' }
+      },
+      {
+        path: 'finite',
+        name: 'Finite',
+        component: () => import('@/views/vis/finite'),
+        meta: { title: '有限元分析数据', icon: 'tree' }
+      },
+      {
+        path: 'forecast',
+        name: 'Forecast',
+        component: () => import('@/views/vis/forecast'),
+        meta: { title: '退化预测数据', icon: 'tree' }
+      }
+    ]
+  },
+
+  // {
+  //   path: '/example',
+  //   component: Layout,
+  //   redirect: '/example/table',
+  //   name: 'Example',
+  //   meta: { title: 'Example', icon: 'el-icon-s-help' },
+  //   children: [
+  //     {
+  //       path: 'table',
+  //       name: 'Table',
+  //       component: () => import('@/views/table/index'),
+  //       meta: { title: 'Table', icon: 'table' }
+  //     },
+  //     {
+  //       path: 'tree',
+  //       name: 'Tree',
+  //       component: () => import('@/views/tree/index'),
+  //       meta: { title: 'Tree', icon: 'tree' }
+  //     }
+  //   ]
+  // },
+
+  // {
+  //   path: '/nested',
+  //   component: Layout,
+  //   redirect: '/nested/menu1',
+  //   name: 'Nested',
+  //   meta: {
+  //     title: 'Nested',
+  //     icon: 'nested'
+  //   },
+  //   children: [
+  //     {
+  //       path: 'menu1',
+  //       component: () => import('@/views/nested/menu1/index'), // Parent router-view
+  //       name: 'Menu1',
+  //       meta: { title: 'Menu1' },
+  //       children: [
+  //         {
+  //           path: 'menu1-1',
+  //           component: () => import('@/views/nested/menu1/menu1-1'),
+  //           name: 'Menu1-1',
+  //           meta: { title: 'Menu1-1' }
+  //         },
+  //         {
+  //           path: 'menu1-2',
+  //           component: () => import('@/views/nested/menu1/menu1-2'),
+  //           name: 'Menu1-2',
+  //           meta: { title: 'Menu1-2' },
+  //           children: [
+  //             {
+  //               path: 'menu1-2-1',
+  //               component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
+  //               name: 'Menu1-2-1',
+  //               meta: { title: 'Menu1-2-1' }
+  //             },
+  //             {
+  //               path: 'menu1-2-2',
+  //               component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
+  //               name: 'Menu1-2-2',
+  //               meta: { title: 'Menu1-2-2' }
+  //             }
+  //           ]
+  //         },
+  //         {
+  //           path: 'menu1-3',
+  //           component: () => import('@/views/nested/menu1/menu1-3'),
+  //           name: 'Menu1-3',
+  //           meta: { title: 'Menu1-3' }
+  //         }
+  //       ]
+  //     },
+  //     {
+  //       path: 'menu2',
+  //       component: () => import('@/views/nested/menu2/index'),
+  //       name: 'Menu2',
+  //       meta: { title: 'menu2' }
+  //     }
+  //   ]
+  // },
 
   {
     path: 'external-link',
@@ -153,7 +243,7 @@ export const constantRoutes = [
     children: [
       {
         path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
+        meta: { title: '实时监控系统', icon: 'link' }
       }
     ]
   },
