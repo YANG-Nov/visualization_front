@@ -57,12 +57,12 @@ export default {
         this.constructionUnit = response.data.constructionUnit
         this.supervisionUnit = response.data.supervisionUnit
         this.introduction = response.data.introduction
-        console.log(this.name)
-        console.log(this.ownerUnit)
-        console.log(this.designUnit)
-        console.log(this.constructionUnit)
-        console.log(this.supervisionUnit)
-        console.log(this.introduction)
+        // console.log(this.name)
+        // console.log(this.ownerUnit)
+        // console.log(this.designUnit)
+        // console.log(this.constructionUnit)
+        // console.log(this.supervisionUnit)
+        // console.log(this.introduction)
       })
       .catch(error => { //请求失败
         console.log(error)
