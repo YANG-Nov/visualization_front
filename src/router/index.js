@@ -81,9 +81,9 @@ export const constantRoutes = [
         meta: { title: '项目信息', icon: 'table' }
       },
       {
-        path: 'tree',
+        path: 'component',
         name: '构件信息',
-        component: () => import('@/views/tree/index'),
+        component: () => import('@/views/vis/component'),
         meta: { title: '构件信息', icon: 'tree' }
       }
     ]
